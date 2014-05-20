@@ -1,4 +1,4 @@
-mongoose-grops-acl
+mongoose-groups-acl
 ===
 
 Usage
