@@ -1,4 +1,4 @@
-mongoose-groups-acl
+mongoose-grops-acl
 ===
 
 Usage
@@ -8,8 +8,8 @@ Usage
 var mongoose = require('mongoose');
 var acl = require('mongoose-groups-acl');
 
-var ResourceSchema = new mongoose.Schema({ … });
-ResourceSchema.plugin(acl.object);
+var ObjectSchema = new mongoose.Schema({ … });
+ObjectSchema.plugin(acl.object);
 
 var UserSchema = new mongoose.Schema({ … });
 UserSchema.plugin(acl.subject);
@@ -17,48 +17,32 @@ UserSchema.plugin(acl.subject);
     
 Methods
 ---
-Getting and setting the permissions for a given resource:
+Getting and setting the permissions for a given object:
 
 ```javascript
 var user = …;
 
-user.setAccess(resource, ['read', 'write', 'delete']);
-user.getAccess(resource); // => ['read', 'write', 'delete']
+user.setAccess(object, ['read', 'write', 'delete']);
+user.getAccess(object); // => ['read', 'write', 'delete']
 ```
     
-We can query for all resources to which a particular subject has access:
+We can query for all objects to which a particular subject has access:
 
 ```javascript
-Resource.withAccess(user, ['read']).exec(function(err, resources) {
+Object.withAccess(user, ['read']).exec(function(err, objects) {
     ...
 });
 ```
-
-For Using Groups (optional)
----
-    var GroupSchema = new Schema({
-        name: {type: String, default: "Standard"}
-    })
-
-    GroupSchema.plugin(acl.subject);
-
-    var UserSchema = new Schema({
-        groups: [{type: oIDRef, ref: 'group'}]
-            ...
-    });
-
-    UserSchema.plugin(acl.subject);
-
     
 Options
 ---
 
-### Resource
+### Object
 
 We can specify the path in which the ACL will be stored (by default it will be available at `_acl`):
 
 ```javascript
-ResourceSchema.plugin(acl.object, {
+ObjectSchema.plugin(acl.object, {
     path: '_acl'
 });
 ```

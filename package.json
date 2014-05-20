@@ -19,7 +19,7 @@
   ],
   "main": "./lib/index",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,6 @@
     "shasum": "eb38725b24992a1acb6adc92cd17dac0c9320da7"
   },
   "_resolved": "git+ssh://git@github.com:TeselaGen/mongoose-acl.git#cf873c9fc1fe0e5d59cde4e60f72130d3fea36aa",
-  "_from": "git+ssh://git@github.com:TeselaGen/mongoose-acl.git"
+  "_from": "mongoose-groups-acl@0.0.1",
+  "_shasum": "a3d9796ac95cdad4ebb3195425d0aea75149e92c"
 }
