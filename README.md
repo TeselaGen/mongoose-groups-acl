@@ -1,8 +1,6 @@
 mongoose-acl
 ===
 
-Forked from: https://github.com/scttnlsn/mongoose-acl
-
 Usage
 ---
 
@@ -40,7 +38,7 @@ There are also convenience methods added to the subject for getting and setting 
 var user = …;
 
 user.setAccess(widget, ['read', 'write', 'delete']);
-user.getAccess(widget,groups); // => ['read', 'write', 'delete']
+user.getAccess(widget); // => ['read', 'write', 'delete']
 ```
     
 We can query for all objects to which a particular subject has access:
